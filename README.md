@@ -15,7 +15,7 @@ Acta Biochimica Polonica 2020
 
 Analytical solution of dihedral fitting
 
-The script ‘analytical_fit_dihedral.py’ calculates (fits) Fourier parameters for dihedral energy part (in force field equation).
+The script ‘K_fit.py’ calculates (fits) Fourier parameters for dihedral energy part (in force field equation).
 As a input it takes the following data files. First, the energy of a molecule for different conformations is demanded.
 It can be obtained using quantum chemistry methods. The second file should include energies for the same states 
 but without dihedral part (parameters are set to zero). The last input files consist of dihedral angles of a molecule
