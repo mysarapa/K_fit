@@ -1,0 +1,5 @@
+./dmph/fit_dihedral.run3.ene
+./dmph/fit_dihedral.run3.ene
+./dmph/
+4
+

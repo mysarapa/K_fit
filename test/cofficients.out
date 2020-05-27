@@ -1,0 +1,98 @@
+Analytic method of dihedral fitting
+Adrian Kania
+Departemnt of Computational Biophysics and Bioinformatics
+Jagiellonian University
+2020
+This software is released under the GNU General Public License
+Please cite:
+   
+What is the path of the qm energy file?
+  qm energy file = ./dmph/fit_dihedral.run3.ene was read
+What is the path of the mm energy file (second column)?
+  mm energy file = ./dmph/fit_dihedral.run3.ene was read
+What is the path to *.dih files?
+15 files *.dih were founded
+What is the amount of cofficients?
+4 cofficients will be calculated
+
+The best result: 4 parametres for each type of dihedral angle:
+{
+ "OS P OH HO": [
+  -81.00280178451794,
+  -24.74159346664237,
+  -2.1905829518364044,
+  3.6283310543074094
+ ],
+ "O2 P OH HO": [
+  -84.46521972202754,
+  -17.444947708463587,
+  6.826987140666461,
+  5.300569507106502
+ ],
+ "OS P OS CT": [
+  20.070425710687232,
+  -26.57247909520811,
+  -1.1493725649779662,
+  -3.2127815457206452
+ ],
+ "CT OS P OH": [
+  23.370334292702864,
+  -24.346927715938364,
+  -2.912825260653335,
+  -3.952449589538446
+ ],
+ "CT OS P O2": [
+  25.13947321906744,
+  -16.30910970584955,
+  6.598812035390438,
+  -6.180606934347452
+ ],
+ "HC CT OS P": [
+  46.515454889275134,
+  5.093068266054615,
+  0.005217518477365957,
+  1.0372959892629297
+ ]
+}
+
+
+
+The best result 4 parametres in range (-20:20) for each type of dihedral angle:
+{
+ "OS P OH HO": [
+  -19.999999999849987,
+  -19.999999999733795,
+  5.700911658867033,
+  5.369040677242427
+ ],
+ "O2 P OH HO": [
+  -14.862473221536973,
+  -15.15646406089831,
+  -8.35353580292709,
+  8.493231459779343
+ ],
+ "OS P OS CT": [
+  14.745533262348648,
+  -19.99999999996754,
+  -6.406952024901419,
+  -1.0784926015856295
+ ],
+ "CT OS P OH": [
+  18.74029013228679,
+  -18.583264368667752,
+  -8.364242364220116,
+  -0.8669513444974698
+ ],
+ "CT OS P O2": [
+  19.99999994215462,
+  -12.80156059209152,
+  16.266508646121203,
+  -2.1540317445578765
+ ],
+ "HC CT OS P": [
+  -7.4319154121639865,
+  19.99999999998716,
+  -0.08971685684017758,
+  2.022511830037194
+ ]
+}
