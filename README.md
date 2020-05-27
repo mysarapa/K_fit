@@ -1,17 +1,17 @@
 # K_fit
 An algebraic approach to determine the torsional coefficients
 
-# -*- coding: utf-8 -*-
+-*- coding: utf-8 -*-
 """
-# Created on Tue Mar  3 14:57:41 2020
+Created on Tue Mar  3 14:57:41 2020
 
-# @author: Adrian Kania, Anna Wójcik-Augustyn, Krzysztof Sarapata, …
+@author: Adrian Kania, Anna Wójcik-Augustyn, Krzysztof Sarapata, …
 
-# This software is released under the GNU General Public License
-# Please cite:
-# Kania A., Wójcik-Augustyn A., Sarapata K., Gucwa M., Murzyn K.,
-# An algebraic approach to determine the torsional coefficients - refinement of OPLS-AA force field for dimethyl phosphate molecule,
-# Acta Biochimica Polonica 2020
+This software is released under the GNU General Public License
+Please cite:
+Kania A., Wójcik-Augustyn A., Sarapata K., Gucwa M., Murzyn K.,
+An algebraic approach to determine the torsional coefficients - refinement of OPLS-AA force field for dimethyl phosphate molecule,
+Acta Biochimica Polonica 2020
 
 Analytical solution of dihedral fitting
 
