@@ -8,6 +8,6 @@ The present directory include all needed data and files to conduct calculations.
 They are in dmph directory.
 
 Run below statment in linux terminal.
-python3 K_fit.py -20 20 < paths2files.txt > cofficients2.out
+python3 K_fit.py -20 20 < paths2files.txt > coefficients2.out
 
-Your results should be the same included in cofficients.out text file.
+Your results should be the same included in coefficients.out text file.
