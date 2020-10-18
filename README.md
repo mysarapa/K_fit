@@ -29,7 +29,7 @@ The ‘K_fit.py’ script optionally expects two values ‘from’ and ‘to’
 which set the range of the resulting parameters K. These optionally values 
 and mandatory paths to data files the script gets from the standard input or text file with paths to QM energy,
 MM energy and all dihedral angles files.
-In the result, the script returns the set of four optimal Fourier or Ryckaert-Belleman parameters for each dihedral types 
+In the result, the script returns the set of four optimal Fourier or Ryckaert-Belleman (RB) parameters for each dihedral types 
 and optionally set of four Fourier parameters from declared range for each dihedral types. 
 The cited work includes the method of obtaining Ryckaert-Belleman parameters based on Fourier ones.
 
@@ -70,7 +70,7 @@ The path to those files are included in paths2files.txt
 
 output:
 
-In the result, the script returns the set of four optimal Fourier parameters for each dihedral types 
+In the result, the script returns the set of four optimal Fourier or RB parameters for each dihedral types 
 and optionally set of four Fourier parameters from declared range for each dihedral types. 
 The values are in JSON data interchange format.
 
