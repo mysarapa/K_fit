@@ -3,12 +3,12 @@
 """
 # Created on Tue Mar  3 14:57:41 2020
 
-# @author: Adrian Kania, Anna Wójcik-Augustyn, Krzysztof Sarapata, …
+# @author: Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn
 
 # This software is released under the GNU General Public License
 # Please cite:
-# Kania A., Wójcik-Augustyn A., Sarapata K., Gucwa M., 
-# An algebraic approach to determine the torsional coefficients - refinement of OPLS-AA force field for dimethyl phosphate molecule,
+# Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn
+# "An algebraic approach to determine the coefficients of torsional potential - refinement of OPLS-AA force field for dimethyl phosphoric acid molecule"
 # 2020
 
 Analytical solution of dihedral fitting
@@ -96,7 +96,7 @@ print ("Jagiellonian University")
 print ("2020")
 print ("This software is released under the GNU General Public License")
 print ("Please cite:")
-print ("   ")
+print ("Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn, An algebraic approach to determine the coefficients of torsional potential - refinement of OPLS-AA force field for dimethyl phosphoric acid molecule")
 
 def forDerivative(M,x): 
     '''for derivative calculation'''
