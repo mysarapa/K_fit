@@ -1,0 +1,104 @@
+Analytic method of dihedral fitting
+Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn
+Departemnt of Computational Biophysics and Bioinformatics
+Jagiellonian University
+2020
+
+
+This software is released under the GNU General Public License
+Please cite:
+Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn, Optimal solution to torsional coefficients fitting problem in force fields parameterization, Journal of Physical Chemistry, 2021
+
+
+What is the path of the qm energy file?
+  qm energy file = ./dmph/fit_dihedral.run3.ene was read
+What is the path of the mm energy file (second column)?
+  mm energy file = ./dmph/fit_dihedral.run3.ene was read
+What is the path to *.dih files?
+  15 files *.dih were founded
+What type of coefficients Fourier/RB (Ryckaert - Bellemans) return?
+  Fourier coefficients will be calculated
+What is the amount of Fourier coefficients?
+  4 Fourier coefficients will be calculated
+
+The best result: 4 Fourier parametres for each type of dihedral angle:
+{
+ "CT OS P OH": [
+  23.370334290461415,
+  -24.346927716291248,
+  -2.912825261355465,
+  -3.952449589835851
+ ],
+ "O2 P OH HO": [
+  -84.46521971817128,
+  -17.444947709605913,
+  6.826987144027953,
+  5.300569507203136
+ ],
+ "OS P OH HO": [
+  -81.00280178058892,
+  -24.741593468133942,
+  -2.1905829535171506,
+  3.628331054439741
+ ],
+ "O2 P OS CT": [
+  25.139473217137493,
+  -16.309109706242452,
+  6.598812036892923,
+  -6.1806069345875585
+ ],
+ "P OS CT HC": [
+  46.51545492711011,
+  5.093068225542083,
+  0.005217519064899534,
+  1.0372959928845376
+ ],
+ "OS P OS CT": [
+  20.07042570908743,
+  -26.572479095688323,
+  -1.1493725659292977,
+  -3.212781545847065
+ ]
+}
+
+
+
+The best result 4 Fourier parametres in range (-20:20) for each type of dihedral angle:
+{
+ "CT OS P OH": [
+  18.740288091391346,
+  -18.58326520911688,
+  -8.364230953502643,
+  -0.8669395341401518
+ ],
+ "O2 P OH HO": [
+  -14.862471746071948,
+  -15.156465186890141,
+  -8.35353937066883,
+  8.493252869001106
+ ],
+ "OS P OH HO": [
+  -19.99999999985989,
+  -19.999999999763503,
+  5.700914007809102,
+  5.369055279270473
+ ],
+ "O2 P OS CT": [
+  19.999999946561367,
+  -12.801562662095014,
+  16.266486731680974,
+  -2.1540117390877493
+ ],
+ "P OS CT HC": [
+  -7.432070958275778,
+  19.99999999998807,
+  -0.08971312622894942,
+  2.0226378472475277
+ ],
+ "OS P OS CT": [
+  14.7455381860915,
+  -19.999999999971465,
+  -6.406940439602216,
+  -1.0784804493079367
+ ]
+}
