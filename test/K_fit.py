@@ -7,8 +7,10 @@
 
 # This software is released under the GNU General Public License
 # Please cite:
-# Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn, "An algebraic approach to determine the coefficients of torsional potential - refinement of
-OPLS-AA force field for dimethyl phosphoric acid molecule"
+# Kania A., Sarapata K., Gucwa M., and Wójcik-Augustyn A.,
+# Optimal solution to torsional coefficients fitting problem in force fields parameterization,
+# Journal of Physical Chemistry 
+# 2021
 
 Analytical solution of dihedral fitting
 
@@ -29,7 +31,7 @@ The ‘K_fit.py’ script optionally expects two values ‘from’ and ‘to’
 which set the range of the resulting parameters K. These optionally values 
 and mandatory paths to data files the script gets from the standard input or text file with paths to QM energy,
 MM energy and all dihedral angles files.
-In the result, the script returns the set of four optimal Fourier or Ryckaert-Belleman parameters for each dihedral types 
+In the result, the script returns the set of four optimal Fourier or Ryckaert-Belleman (RB) parameters for each dihedral types 
 and optionally set of four Fourier parameters from declared range for each dihedral types. 
 The cited work includes the method of obtaining Ryckaert-Belleman parameters based on Fourier ones.
 
@@ -46,22 +48,24 @@ from, to	    optionally two values ‘from’ and ‘to’ which set the range o
 path2files.txt  includes paths to data files: 
                      path to QM energy file,
                      MM energy file,
-                     *.dih files
-                     and the amount of coefficients to calculate (3 or 4 value is allowed).
+                     *.dih files,
+					 type of coefficients: Fourier or RB (Ryckaert-Belleman),
+					 and the amount of coefficients to calculate (3 or 4 value is allowed).
 
 data files:
 
 QM energy file	the energy of a molecule for different conformations e.g. quantum energy values from Gaussian 
 				used as a base for making a fit. Values should have column layout.
+
 MM energy file	the energy of a molecule for different conformations calculated with K's parameters set to 0. 
 				Values should have column layout.
-
 
 *.dih files 	with values of all dihedrals in molecule for different conformations. Values should have column layout. 
 				The first line in each files containing the type of dihedral: order of the atoms forming that angle. 
 				e.g. 'P.6-OS.10-CT.11-HC.14.dih' file in first line should have: 'P OS CT HC'.
 				Ordering of values in all *.dih files is the same, so rows are related across all files.
-coff            amount of coefficient to calculte. Default is 4, another possible one is 3
+
+coff            amount of Fourier coefficients to calculte. Default is 4, another possible one is 3
 
 coffType        return the Ryckaert-Belleman coefficients instead of Fourier ones.
 
@@ -70,8 +74,8 @@ The path to those files are included in paths2files.txt
 
 output:
 
-In the result, the script returns the set of four optimal Fourier parameters for each dihedral types 
-and optionally set of four Fourier parameters from declared range for each dihedral types. 
+In the result, the script returns the set of optimal Fourier or RB parameters for each dihedral types 
+and optionally set of Fourier/RB parameters from declared range for each dihedral types. 
 The values are in JSON data interchange format.
 
 """
@@ -89,13 +93,15 @@ from scipy.optimize import lsq_linear
 
 
 print ("Analytic method of dihedral fitting")
-print ("Adrian Kania")
+print ("Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn")
 print ("Departemnt of Computational Biophysics and Bioinformatics")
 print ("Jagiellonian University")
 print ("2020")
+print('\n')
 print ("This software is released under the GNU General Public License")
 print ("Please cite:")
-print ("Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn, An algebraic approach to determine the coefficients of torsional potential - refinement of OPLS-AA force field for dimethyl phosphoric acid molecule")
+print ("Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn, Optimal solution to torsional coefficients fitting problem in force fields parameterization, Journal of Physical Chemistry, 2021")
+print('\n')
 
 def forDerivative(M,x): 
     '''for derivative calculation'''
@@ -137,21 +143,21 @@ dihDir = sys.stdin.readline().strip()
 
 # read *.dih files name from dir
 files = [f for f in os.listdir(dihDir) if f.endswith('.dih')]
-print('{} files *.dih were founded'.format(len(files)))
+print('  {} files *.dih were founded'.format(len(files)))
 
 
 # type of coefficient
-print('What type of coefficients Fourier/Ryckaert - Bellemans return?')
+print('What type of coefficients Fourier/RB (Ryckaert - Bellemans) return?')
 coffType = sys.stdin.readline().strip()
 coffType = 'RB' if coffType == 'RB' else 'Fourier'
-print('{} coefficients will be calculated'.format(coffType))
+print('  {} coefficients will be calculated'.format(coffType))
 
 
 # read amount of output coefficients
-print('What is the amount of coefficients?')
+print('What is the amount of Fourier coefficients?')
 coff = sys.stdin.readline().strip()
 coff = 3 if coff == '3' else 4
-print('{} coefficients will be calculated'.format(coff))
+print('  {} Fourier coefficients will be calculated'.format(coff))
 
 
 diF = {k:open(dihDir + '/' + k).readline().strip() for k in files}
@@ -243,12 +249,11 @@ result = {type_orders[i]:list(K)[coff*i:coff*i+coff] for i in range(len(type_ord
 
 cT = {'RB': 'Ryckaert - Bellemans', 'Fourier': 'Fourier'}
 
-
-print('\nThe best result: {} {} parametres for each type of dihedral angle:'.format(coff, cT[coffType]))
-
 if coffType == 'Fourier':
+    print('\nThe best result: {} {} parametres for each type of dihedral angle:'.format(coff, cT[coffType]))
     print(json.dumps(result, indent=1))
 else:
+    print('\nThe best result: {} parametres (obtained for {} Fourier ones) for each type of dihedral angle:'.format(cT[coffType], coff))
     print(json.dumps({key: list(fourier2RM(*result[key])) for key in result}, indent=1))
 
 if 'fr' in locals():
@@ -257,9 +262,10 @@ if 'fr' in locals():
     ww=lsq_linear(M,B,bounds=(x1, x2)).x
     print('\n')
     resultWW = {type_orders[i]:list(ww)[coff*i:coff*i+coff] for i in range(len(type_orders))}
-    print('\nThe best result {} {} parametres in range ({}:{}) for each type of dihedral angle:'.format(coff, cT[coffType], fr, to))
     if coffType == 'Fourier':
+        print('\nThe best result {} {} parametres in range ({}:{}) for each type of dihedral angle:'.format(coff, cT[coffType], fr, to))
         print(json.dumps(resultWW, indent=1))
     else:
+        print('\nThe best result {} parametres (obtainded for {} Fourier ones in range ({}:{})) for each type of dihedral angle:'.format(cT[coffType], coff, fr, to))
         print(json.dumps({key: list(fourier2RM(*resultWW[key])) for key in result}, indent=1))
 
