@@ -1,5 +1,5 @@
 ./dmph/fit_dihedral.run3.ene
 ./dmph/fit_dihedral.run3.ene
 ./dmph/
+Fourier
 4
-
