@@ -6,7 +6,11 @@
 
 # This software is released under the GNU General Public License
 # Please cite:
-# Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn, "An algebraic approach to determine the coefficients of torsional potential - refinement of OPLS-AA force field for dimethyl phosphoric acid molecule"
+# Kania A., Sarapata K., Gucwa M., and Wójcik-Augustyn A.,
+# Optimal solution to torsional coefficients fitting problem in force fields parameterization,
+# Journal of Physical Chemistry 
+# 2021
+
 
 Analytical solution of dihedral fitting
 
@@ -27,6 +31,7 @@ The ‘K_fit.py’ script optionally expects two values ‘from’ and ‘to’
 which set the range of the resulting parameters K. These optionally values 
 and mandatory paths to data files the script gets from the standard input or text file with paths to QM energy,
 MM energy and all dihedral angles files.
+
 In the result, the script returns the set of four optimal Fourier or Ryckaert-Belleman (RB) parameters for each dihedral types 
 and optionally set of four Fourier parameters from declared range for each dihedral types. 
 The cited work includes the method of obtaining Ryckaert-Belleman parameters based on Fourier ones.
@@ -44,8 +49,9 @@ from, to	    optionally two values ‘from’ and ‘to’ which set the range o
 path2files.txt  includes paths to data files: 
                      path to QM energy file,
                      MM energy file,
-                     *.dih files
-                     and the amount of coefficients to calculate (3 or 4 value is allowed).
+                     *.dih files,
+                     the amount of coefficients to calculate (3 or 4 value is allowed),
+		     and type of coefficients: Fourier or RB (Ryckaert-Belleman).
 
 data files:
 
@@ -59,7 +65,7 @@ MM energy file	the energy of a molecule for different conformations calculated w
 				The first line in each files containing the type of dihedral: order of the atoms forming that angle. 
 				e.g. 'P.6-OS.10-CT.11-HC.14.dih' file in first line should have: 'P OS CT HC'.
 				Ordering of values in all *.dih files is the same, so rows are related across all files.
-coff            amount of coefficient to calculte. Default is 4, another possible one is 3
+coff            amount of Fourier coefficients to calculte. Default is 4, another possible one is 3
 
 coffType        return the Ryckaert-Belleman coefficients instead of Fourier ones.
 
@@ -68,8 +74,8 @@ The path to those files are included in paths2files.txt
 
 output:
 
-In the result, the script returns the set of four optimal Fourier or RB parameters for each dihedral types 
-and optionally set of four Fourier parameters from declared range for each dihedral types. 
+In the result, the script returns the set optimal Fourier or RB parameters for each dihedral types 
+and optionally set of Fourier/RB parameters from declared range for each dihedral types. 
 The values are in JSON data interchange format.
 
 """
