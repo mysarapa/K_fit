@@ -56,6 +56,7 @@ data files:
 
 QM energy file	the energy of a molecule for different conformations e.g. quantum energy values from Gaussian 
 				used as a base for making a fit. Values should have column layout.
+
 MM energy file	the energy of a molecule for different conformations calculated with K's parameters set to 0. 
 				Values should have column layout.
 
