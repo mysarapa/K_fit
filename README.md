@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
 # Created on Tue Mar  3 14:57:41 2020
 
 # @author: Adrian Kania, Krzysztof Sarapata, Michal Gucwa, and Anna Wójcik-Augustyn
@@ -77,5 +76,3 @@ output:
 In the result, the script returns the set optimal Fourier or RB parameters for each dihedral types 
 and optionally set of Fourier/RB parameters from declared range for each dihedral types. 
 The values are in JSON data interchange format.
-
-"""
