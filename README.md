@@ -65,11 +65,13 @@ MM energy file	the energy of a molecule for different conformations calculated w
 				The first line in each files containing the type of dihedral: order of the atoms forming that angle. 
 				e.g. 'P.6-OS.10-CT.11-HC.14.dih' file in first line should have: 'P OS CT HC'.
 				Ordering of values in all *.dih files is the same, so rows are related across all files.
+
 coff            amount of Fourier coefficients to calculte. Default is 4, another possible one is 3
 
 coffType        return the Ryckaert-Belleman coefficients instead of Fourier ones.
 
 All QM, MM and *.dih files should include data in the same order which corresponds to the mutual relationship.
+
 The path to those files are included in paths2files.txt
 
 output:
