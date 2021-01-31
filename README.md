@@ -40,7 +40,7 @@ usage:
 
 ./K_fit.py from to < paths2files.txt  > coefficients.out
 
-option:
+options:
 
 from, to	    optionally two values ‘from’ and ‘to’ which set the range of the resulting parameters K.
 				The calculated K parameters should be included inside this range. This option is only for Fourier parameters.
