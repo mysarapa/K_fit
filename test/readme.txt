@@ -3,6 +3,7 @@ How to test K_fit.py script:
 On your platform you should have Python3 installed and following libraries:
 Numpy
 Pandas
+Scipy
 
 The present directory include all needed data and files to conduct calculations.
 They are in dmph directory.
