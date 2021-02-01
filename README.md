@@ -56,7 +56,7 @@ data files:
 
 QM energy file	the energy of a molecule for different conformations with respect to the most stable conformer e.g. relative energy values from Gaussian used as a base for making a 			fit. Values (in kJ/mol - the unit has to be the same like in MM energy file) should have column layout.
 
-MM energy file	the realtive energy of a molecule for different conformations (with respect to the most stable) calculated with K's parameters set to 0. Values (in kJ/mol - the unit 			has to be the same like in QM energy file) should have column layout.
+MM energy file	the relative energy of a molecule for different conformations (with respect to the most stable) calculated with K's parameters set to 0. Values (in kJ/mol - the unit 			has to be the same like in QM energy file) should have column layout.
 
 
 *.dih files 	with values of all dihedrals in molecule for different conformations. Values should have column layout. 
